@@ -1,5 +1,5 @@
 import { Get, Post, Put, Delete, Controller, Param, Response, Request, Body, UseGuards} from '@nestjs/common';
-import { QueueDBService} from './queuedB.service';
+import { QueueDBService} from './queueDB.service';
 import { ApiUseTags, ApiOperation, ApiResponse, ApiImplicitQuery, ApiImplicitParam, ApiImplicitBody } from '@nestjs/swagger';
 import { Database } from '../databases/entities/database.entity';
 import { QueueDB } from './entities/queueDB.entity';
