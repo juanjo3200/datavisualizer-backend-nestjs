@@ -1,0 +1,1 @@
+{"version":3,"file":"queueDB.schema.js","sourceRoot":"","sources":["../../../src/queueDb/schemas/queueDB.schema.ts"],"names":[],"mappings":";;AAAA,qCAAqC;AAIxB,QAAA,aAAa,GAAG,QAAQ,CAAC,MAAM,CAAC;IACzC,MAAM,EAAE,MAAM;IACd,GAAG,EAAE,MAAM;IACX,WAAW,EAAE,MAAM;IACnB,OAAO,EAAE,EAAE,IAAI,EAAE,QAAQ,CAAC,MAAM,CAAC,KAAK,CAAC,QAAQ,EAAE,GAAG,EAAE,MAAM,EAAE;CACjE,CAAC,CAAC"}
