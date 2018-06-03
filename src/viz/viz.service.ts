@@ -9,36 +9,36 @@ import { Database } from '../databases/entities/database.entity';
 import * as underscore from 'underscore';
 @Component()
 export class VizService {
-    constructor( @InjectModel(VizSchema) private readonly vizModel: Model<Viz> , ) { }
+    constructor(@InjectModel(VizSchema) private readonly vizModel: Model<Viz>, ) { }
 
     async getAll() {
-        return await this.vizModel.find();
+        return await this.vizModel.find().populate('databases').exec();
     }
 
     async create(viz: Viz): Promise<void> {
-        const createViz= new this.vizModel(viz);
+        const createViz = new this.vizModel(viz);
         return await createViz.save();
     }
 
     async getById(id) {
         try {
-            return await this.vizModel.findById(id);
+            return await this.vizModel.findById(id).populate('databases').exec();
         } catch (e) {
             throw new HttpException('Not found', HttpStatus.NOT_FOUND);
         }
     }
 
     async getByOpciones(database, opciones) {
-        let arrayOpciones = [];
-        Object.keys(opciones).forEach(function (key) {
-            arrayOpciones.push({ nombre: key, valor: opciones[key]});
-        });   
-        let result = [];
         try {
-            await this.vizModel.find({databases :database}, (err, vizQuery)=>{
+            let arrayOpciones = [];
+            Object.keys(opciones).forEach(function (key) {
+                arrayOpciones.push({ nombre: key, valor: opciones[key] });
+            });
+            let result = [];
+            await this.vizModel.find({ databases: database }, (err, vizQuery) => {
                 vizQuery.forEach(viz => {
-                    if(JSON.stringify(viz.options) == JSON.stringify(arrayOpciones) ){
-                        result= viz;
+                    if (JSON.stringify(viz.options) == JSON.stringify(arrayOpciones)) {
+                        result = viz;
                     }
                 });
             });

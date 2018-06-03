@@ -18,6 +18,8 @@ export class Viz {
     nombre: String;
     @ApiModelProperty({ type: String })
     url: String;
+    @ApiModelProperty({ type: String, description: "Imagen previsualización de la viz" })
+    img: String;
     @ApiModelProperty({ type: String , isArray: true})
     databases: Array<String>;
     @ApiModelProperty({ type: Option , isArray: true })

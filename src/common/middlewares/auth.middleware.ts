@@ -27,6 +27,7 @@ export class AuthoritationMiddleware implements NestMiddleware {
                 });
             }
             req.user = payload;
+            next();
         };
     }
 }

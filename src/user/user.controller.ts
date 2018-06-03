@@ -1,4 +1,4 @@
-import { Get, Post, Put, Controller, Param , Response, Request, Body} from '@nestjs/common';
+import { Get, Post, Put, Controller,Delete, Param , Response, Request, Body} from '@nestjs/common';
 import { ApiUseTags, ApiOperation, ApiResponse, ApiImplicitQuery, ApiImplicitParam, ApiImplicitBody } from '@nestjs/swagger';
 import { UserService} from './user.service';
 import { User} from './entities/user.entity';
@@ -31,6 +31,16 @@ export class UserController {
         return await this.userService.addViz(email, viz);
     }
 
+    @ApiOperation({ title: 'Borra una vizualización al usuario con email :email' })
+    @ApiResponse({ status: 201, description: 'Operación correcta' })
+    @ApiResponse({ status: 401, description: 'Operación no permitida para el usuario' })
+    @ApiResponse({ status: 500, description: 'Error en los parámetros de entrada' })
+    @ApiImplicitParam({ name: 'email', description: 'Email del usuario ', required: true })
+    @ApiImplicitParam({ name: 'id', description: 'Id de la visualizacion ', required: true })
+    @Delete('viz/:email/:id')
+    async deleteVizViz(@Param('email') email: string, @Param('id') id: string) {
+        return await this.userService.deleteViz(email, id);
+    }
 
     @ApiOperation({ title: 'Comprueba si existe un usuario con email , :email' })
     @ApiResponse({ status: 200, description: 'Operación correcta' })
@@ -62,7 +72,7 @@ export class UserController {
         this.userService.login(res, user);
     }
     
-    @ApiOperation({ title: 'Logueo de usuario ' })
+    @ApiOperation({ title: 'Actualizar un usuario ' })
     @ApiResponse({ status: 200, description: 'Operación correcta' })
     @ApiResponse({ status: 404, description: 'No se ha podido actualizar un usuario' })
     @ApiResponse({ status: 500, description: 'Error en los parámetros de entrada' })

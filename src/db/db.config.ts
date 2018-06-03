@@ -1,1 +1,1 @@
-export const URL =  'mongodb://localhost:27017/datavisualizer';
+export const URL =  'mongodb://juanjo:tfgjuanjo1@ds147180.mlab.com:47180/datavisualizer';

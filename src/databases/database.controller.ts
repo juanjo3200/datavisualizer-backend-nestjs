@@ -1,8 +1,13 @@
-import { Get, Post, Put, Delete, Controller, Param , Response, Request, Body, Query} from '@nestjs/common';
+import { Get, Post, Put, Delete, Controller, Param, Response, Request, Body, Query, UseGuards} from '@nestjs/common';
 import { DatabaseService} from './database.service';
 import { ApiUseTags, ApiOperation, ApiResponse, ApiImplicitQuery, ApiImplicitParam, ApiImplicitBody } from '@nestjs/swagger';
 import { Database, Field } from './entities/database.entity';
+import { RolesGuard } from '../common/guards/roles.guard';
+import { Roles } from '../common/decorators/roles.decorator';
+
+
 @ApiUseTags('database')
+@UseGuards(RolesGuard)
 @Controller('database')
 export class DatabaseController {
 
@@ -36,9 +41,10 @@ export class DatabaseController {
         return await this.databaseService.getByName(nombre);
     }
 
-    @ApiOperation({ title: 'Crea una base de datos una base de datos ' })
+    @ApiOperation({ title: 'Crea una base de datos' })
     @ApiResponse({ status: 201, description: 'Operación correcta' })
     @ApiResponse({ status: 500, description: 'Error en los parámetros de entrada' })
+    @Roles('ADMIN')
     @Post('')
     async createDatabase(@Body() database : Database): Promise<void>{
         return await  this.databaseService.create(database);
@@ -49,6 +55,7 @@ export class DatabaseController {
     @ApiResponse({ status: 404, description: 'No se ha encontrado la base de datos' })
     @ApiResponse({ status: 500, description: 'Error en los parámetros de entrada' })
     @ApiImplicitParam({ name: 'id', description: 'Id de la base de datos ', required: true })
+    @Roles('ADMIN')
     @Delete(':id')
     async deleteDatabase(@Param('id') id: string) {
         return await this.databaseService.delete(id);
@@ -60,6 +67,7 @@ export class DatabaseController {
     @ApiResponse({ status: 404, description: 'No se ha encontrado la base de datos' })
     @ApiResponse({ status: 500, description: 'Error en los parámetros de entrada' })
     @ApiImplicitParam({ name: 'id', description: 'Id de la base de datos ', required: true })
+    @Roles('ADMIN')
     @Put(':id')
     async updateDatabase(@Param('id') id: string, @Body() database : Database){
         return await this.databaseService.update(id, database);
@@ -81,16 +89,18 @@ export class DatabaseController {
     @ApiResponse({ status: 404, description: 'No se ha encontrado la base de datos' })
     @ApiResponse({ status: 500, description: 'Error en los parámetros de entrada' })
     @ApiImplicitParam({ name: 'id', description: 'id de la base de datos ', required: true })
+    @Roles('ADMIN')
     @Post('/campos/:id')
     async addCampos(@Param('id') id :string, @Body('campos') campos: Field): Promise<void> {
         return await this.databaseService.addCampos(id, campos);
     }
 
-    @ApiOperation({ title: 'Borra e campo de una base de datos con id :id ' })
+    @ApiOperation({ title: 'Borra el campo de una base de datos con id :id ' })
     @ApiResponse({ status: 200, description: 'Operación correcta' })
     @ApiResponse({ status: 404, description: 'No se ha encontrado la base de datos' })
     @ApiResponse({ status: 500, description: 'Error en los parámetros de entrada' })
     @ApiImplicitParam({ name: 'id', description: 'id de la base de datos ', required: true })
+    @Roles('ADMIN')
     @Delete('/campos/:id')
     async removeCampo(@Param('id') id : string , @Query('campo') campo: string) {
         return await this.databaseService.removeCampo(id, campo);

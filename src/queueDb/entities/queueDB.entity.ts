@@ -11,7 +11,4 @@ export class QueueDB {
     @ApiModelProperty({ type: String })
     descripcion: String;
     
-    @ApiModelProperty({type: String , description: 'Id del usuario que crea la petición'})
-    usuario: String;
-    
 }
