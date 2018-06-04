@@ -7,8 +7,8 @@ import * as express from 'express';
 async function bootstrap() {
 	const app = await NestFactory.create(ApplicationModule);
 	app.setGlobalPrefix('api');
-	app.use('/', express.static(path.join(__dirname + '/../app/')));
-	app.use('/*', (req: any, res: any) => {
+	app.use('/visualizer', express.static(path.join(__dirname + '/../app/')));
+	app.use('/visualizer*', (req: any, res: any) => {
 		res.sendFile(path.join(__dirname + '/../app/'));
 	});
 

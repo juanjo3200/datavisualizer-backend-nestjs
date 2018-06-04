@@ -70,29 +70,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var routes = [
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_2__components_login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__services_guards_protectLoggin_guard__["a" /* ProtectLogginGuard */]] },
     {
-        path: 'home', component: __WEBPACK_IMPORTED_MODULE_4__components_home_home_component__["a" /* HomeComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_10__services_guards_loggin_guard__["a" /* LogginGuard */]], children: [
-            { path: '', redirectTo: 'imagegrid', pathMatch: 'full' },
-            { path: 'imagegrid', component: __WEBPACK_IMPORTED_MODULE_8__components_imagegrid_imagegrid_component__["a" /* ImageGridComponent */] },
-            { path: 'vizView/:id', component: __WEBPACK_IMPORTED_MODULE_19__components_viz_view_viz_view_component__["a" /* VizViewComponent */] },
-            { path: 'userdata', component: __WEBPACK_IMPORTED_MODULE_6__components_user_data_user_data_component__["a" /* UserDataComponent */] },
-            { path: 'stepper', component: __WEBPACK_IMPORTED_MODULE_7__components_stepper_stepper_component__["a" /* StepperComponent */] },
-            { path: 'databases', component: __WEBPACK_IMPORTED_MODULE_9__components_databases_databases_component__["a" /* DatabasesComponent */] },
-            { path: 'queueDB', component: __WEBPACK_IMPORTED_MODULE_12__components_queue_db_queue_db_component__["a" /* QueueDbComponent */] },
-            { path: 'adminpanel', canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_guards_admin_guard__["a" /* AdminGuard */]], component: __WEBPACK_IMPORTED_MODULE_13__components_admin_panel_admin_panel_component__["a" /* AdminPanelComponent */], children: [
-                    { path: '', redirectTo: 'queuedblist', pathMatch: 'full' },
-                    { path: 'queuedblist', component: __WEBPACK_IMPORTED_MODULE_16__components_queuedb_list_queuedb_list_component__["a" /* QueuedbListComponent */] },
-                    { path: 'queuedbdetail/:id', component: __WEBPACK_IMPORTED_MODULE_15__components_queuedb_detail_queuedb_detail_component__["a" /* QueuedbDetailComponent */] },
-                    { path: 'vizqueuelist', component: __WEBPACK_IMPORTED_MODULE_17__components_vizqueue_list_vizqueue_list_component__["a" /* VizqueueListComponent */] },
-                    { path: 'vizqueuedetail/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_vizqueue_detail_vizqueue_detail_component__["a" /* VizqueueDetailComponent */] }
-                ] }
+        path: 'visualizer', children: [
+            { path: 'login', component: __WEBPACK_IMPORTED_MODULE_2__components_login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__services_guards_protectLoggin_guard__["a" /* ProtectLogginGuard */]] },
+            {
+                path: 'home', component: __WEBPACK_IMPORTED_MODULE_4__components_home_home_component__["a" /* HomeComponent */],
+                canActivate: [__WEBPACK_IMPORTED_MODULE_10__services_guards_loggin_guard__["a" /* LogginGuard */]], children: [
+                    { path: '', redirectTo: 'imagegrid', pathMatch: 'full' },
+                    { path: 'imagegrid', component: __WEBPACK_IMPORTED_MODULE_8__components_imagegrid_imagegrid_component__["a" /* ImageGridComponent */] },
+                    { path: 'vizView/:id', component: __WEBPACK_IMPORTED_MODULE_19__components_viz_view_viz_view_component__["a" /* VizViewComponent */] },
+                    { path: 'userdata', component: __WEBPACK_IMPORTED_MODULE_6__components_user_data_user_data_component__["a" /* UserDataComponent */] },
+                    { path: 'stepper', component: __WEBPACK_IMPORTED_MODULE_7__components_stepper_stepper_component__["a" /* StepperComponent */] },
+                    { path: 'databases', component: __WEBPACK_IMPORTED_MODULE_9__components_databases_databases_component__["a" /* DatabasesComponent */] },
+                    { path: 'queueDB', component: __WEBPACK_IMPORTED_MODULE_12__components_queue_db_queue_db_component__["a" /* QueueDbComponent */] },
+                    {
+                        path: 'adminpanel', canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_guards_admin_guard__["a" /* AdminGuard */]], component: __WEBPACK_IMPORTED_MODULE_13__components_admin_panel_admin_panel_component__["a" /* AdminPanelComponent */], children: [
+                            { path: '', redirectTo: 'queuedblist', pathMatch: 'full' },
+                            { path: 'queuedblist', component: __WEBPACK_IMPORTED_MODULE_16__components_queuedb_list_queuedb_list_component__["a" /* QueuedbListComponent */] },
+                            { path: 'queuedbdetail/:id', component: __WEBPACK_IMPORTED_MODULE_15__components_queuedb_detail_queuedb_detail_component__["a" /* QueuedbDetailComponent */] },
+                            { path: 'vizqueuelist', component: __WEBPACK_IMPORTED_MODULE_17__components_vizqueue_list_vizqueue_list_component__["a" /* VizqueueListComponent */] },
+                            { path: 'vizqueuedetail/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_vizqueue_detail_vizqueue_detail_component__["a" /* VizqueueDetailComponent */] }
+                        ]
+                    }
+                ]
+            },
+            { path: 'register', component: __WEBPACK_IMPORTED_MODULE_5__components_register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__services_guards_protectLoggin_guard__["a" /* ProtectLogginGuard */]] },
+            { path: '', redirectTo: 'login', pathMatch: 'full' },
+            { path: '**', component: __WEBPACK_IMPORTED_MODULE_3__components_error_error_component__["a" /* ErrorComponent */] }
         ]
     },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_5__components_register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__services_guards_protectLoggin_guard__["a" /* ProtectLogginGuard */]] },
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: '**', component: __WEBPACK_IMPORTED_MODULE_3__components_error_error_component__["a" /* ErrorComponent */] }
+    { path: '**', redirectTo: '' }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -412,7 +419,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/databases/databases.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"dataSource; else templateName\">\n  <ng-template matStepLabel>Selecciona las bases de datos</ng-template>\n  <h2 class=\"example-h2\">Bases de datos</h2>\n  <mat-form-field class=\"example-form-field\">\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filtro\">\n  </mat-form-field>\n\n  <mat-table #table [dataSource]=\"dataSource\">\n\n\n    <ng-container matColumnDef=\"nombre\">\n      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>\n      <mat-cell *matCellDef=\"let database\"> {{database.nombre}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"descripcion\">\n      <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>\n      <mat-cell *matCellDef=\"let database\"> {{database.descripcion}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"campos\">\n      <mat-header-cell *matHeaderCellDef> Campos </mat-header-cell>\n      <mat-cell *matCellDef=\"let database\">\n        <ul>\n          <li *ngFor=\"let campo of database.campos\">\n            {{campo.nombre}} : {{campo.tipo}}\n          </li>\n        </ul>\n      </mat-cell>\n\n    </ng-container>\n\n    <!-- Checkbox Column -->\n    <ng-container *ngIf='isAdmin()' matColumnDef=\"borrar\">\n      <mat-header-cell *matHeaderCellDef>\n        <mat-checkbox (change)=\"$event ? masterToggle() : null\" [checked]=\"selection.hasValue() && isAllSelected()\" [indeterminate]=\"selection.hasValue() && !isAllSelected()\">\n        </mat-checkbox>\n        <button mat-icon-button (click)='deleteSelected()'>\n          <mat-icon aria-label=\"Delete\">delete</mat-icon>\n        </button>\n\n\n      </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\">\n        <mat-checkbox (click)=\"$event.stopPropagation()\" (change)=\"$event ? selection.toggle(row) : null\" [checked]=\"selection.isSelected(row)\">\n        </mat-checkbox>\n      </mat-cell>\n    </ng-container>\n\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n\n  </mat-table>\n\n  <button mat-fab class=\"app-fab\" [routerLink]=\"['/home/queueDB']\">\n    <mat-icon>add</mat-icon>\n  </button>\n</div>\n\n<ng-template #templateName>\n  <mat-spinner></mat-spinner>\n</ng-template>\n\n"
+module.exports = "<div *ngIf=\"dataSource; else templateName\">\n  <ng-template matStepLabel>Selecciona las bases de datos</ng-template>\n  <h2 class=\"example-h2\">Bases de datos</h2>\n  <mat-form-field class=\"example-form-field\">\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filtro\">\n  </mat-form-field>\n\n  <mat-table #table [dataSource]=\"dataSource\">\n\n\n    <ng-container matColumnDef=\"nombre\">\n      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>\n      <mat-cell *matCellDef=\"let database\"> {{database.nombre}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"descripcion\">\n      <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>\n      <mat-cell *matCellDef=\"let database\"> {{database.descripcion}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"campos\">\n      <mat-header-cell *matHeaderCellDef> Campos </mat-header-cell>\n      <mat-cell *matCellDef=\"let database\">\n        <ul>\n          <li *ngFor=\"let campo of database.campos\">\n            {{campo.nombre}} : {{campo.tipo}}\n          </li>\n        </ul>\n      </mat-cell>\n\n    </ng-container>\n\n    <!-- Checkbox Column -->\n    <ng-container *ngIf='isAdmin()' matColumnDef=\"borrar\">\n      <mat-header-cell *matHeaderCellDef>\n        <mat-checkbox (change)=\"$event ? masterToggle() : null\" [checked]=\"selection.hasValue() && isAllSelected()\" [indeterminate]=\"selection.hasValue() && !isAllSelected()\">\n        </mat-checkbox>\n        <button mat-icon-button (click)='deleteSelected()'>\n          <mat-icon aria-label=\"Delete\">delete</mat-icon>\n        </button>\n\n\n      </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\">\n        <mat-checkbox (click)=\"$event.stopPropagation()\" (change)=\"$event ? selection.toggle(row) : null\" [checked]=\"selection.isSelected(row)\">\n        </mat-checkbox>\n      </mat-cell>\n    </ng-container>\n\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n\n  </mat-table>\n\n  <button mat-fab class=\"app-fab\" [routerLink]=\"['/visualizer/home/queueDB']\">\n    <mat-icon>add</mat-icon>\n  </button>\n</div>\n\n<ng-template #templateName>\n  <mat-spinner></mat-spinner>\n</ng-template>\n"
 
 /***/ }),
 
@@ -711,7 +718,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"example-container\">\r\n  <mat-toolbar color=\"primary\">\r\n    <button mat-button class=\"app-menu-button\" (click)=\"sidenav.toggle()\">\r\n      <i class=\"material-icons\">menu</i>\r\n    </button>\r\n    <span class=\"title\">Datavisualizer</span>\r\n  </mat-toolbar>\r\n  <mat-sidenav-container class=\"app-sidenav\" color=\"primary\">\r\n\r\n    <mat-sidenav #sidenav mode=\"side\" layout=\"vertical\" class=\"example-sidenav\">\r\n      <mat-toolbar>\r\n        <mat-toolbar-row>\r\n          <a [routerLink]=\"['/home/imagegrid']\">\r\n            <span>Visualizaciones</span>\r\n            <span class=\"app-toolbar-filler\"></span>\r\n            <mat-icon class=\"example-icon\">image</mat-icon>\r\n          </a>\r\n        </mat-toolbar-row>\r\n\r\n        <mat-toolbar-row>\r\n          <a [routerLink]=\"['/home/userdata']\">\r\n            <span>Datos del usuario</span>\r\n            <span class=\"app-toolbar-filler\"></span>\r\n            <mat-icon class=\"example-icon\">account_circle</mat-icon>\r\n          </a>\r\n        </mat-toolbar-row>\r\n\r\n        <mat-toolbar-row>\r\n          <a [routerLink]=\"['/home/databases']\">\r\n            <span>Bases de datos</span>\r\n            <span class=\"app-toolbar-filler\"></span>\r\n            <mat-icon class=\"example-icon\">archive</mat-icon>\r\n          </a>\r\n        </mat-toolbar-row>\r\n\r\n        <mat-toolbar-row *ngIf='isAdmin()'>\r\n          <a [routerLink]=\"['/home/adminpanel']\">\r\n            <span>Panel de administración</span>\r\n            <span class=\"app-toolbar-filler\"></span>\r\n            <mat-icon class=\"example-icon\">settings</mat-icon>\r\n          </a>\r\n        </mat-toolbar-row>\r\n\r\n\r\n        <mat-toolbar-row>\r\n          <button mat-raised-button color=\"warn\" class=\"app-sidebar-button\" (click)=\"logout()\">\r\n            <mat-icon class=\"example-icon\">power_settings_new</mat-icon>\r\n            Salir\r\n          </button>\r\n        </mat-toolbar-row>\r\n\r\n\r\n      </mat-toolbar>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <router-outlet></router-outlet>\r\n    </mat-sidenav-content>\r\n\r\n  </mat-sidenav-container>\r\n</div>\r\n"
+module.exports = "<div class=\"example-container\">\r\n  <mat-toolbar color=\"primary\">\r\n    <button mat-button class=\"app-menu-button\" (click)=\"sidenav.toggle()\">\r\n      <i class=\"material-icons\">menu</i>\r\n    </button>\r\n    <span class=\"title\">Datavisualizer</span>\r\n  </mat-toolbar>\r\n  <mat-sidenav-container class=\"app-sidenav\" color=\"primary\">\r\n\r\n    <mat-sidenav #sidenav mode=\"side\" layout=\"vertical\" class=\"example-sidenav\">\r\n      <mat-toolbar>\r\n        <mat-toolbar-row>\r\n          <a [routerLink]=\"['/visualizer/home/imagegrid']\">\r\n            <span>Visualizaciones</span>\r\n            <span class=\"app-toolbar-filler\"></span>\r\n            <mat-icon class=\"example-icon\">image</mat-icon>\r\n          </a>\r\n        </mat-toolbar-row>\r\n\r\n        <mat-toolbar-row>\r\n          <a [routerLink]=\"['/visualizer/home/userdata']\">\r\n\r\n            <span>Datos del usuario</span>\r\n            <span class=\"app-toolbar-filler\"></span>\r\n            <mat-icon class=\"example-icon\">account_circle</mat-icon>\r\n          </a>\r\n        </mat-toolbar-row>\r\n\r\n        <mat-toolbar-row>\r\n          <a [routerLink]=\"['/visualizer/home/databases']\">\r\n\r\n            <span>Bases de datos</span>\r\n            <span class=\"app-toolbar-filler\"></span>\r\n            <mat-icon class=\"example-icon\">archive</mat-icon>\r\n          </a>\r\n        </mat-toolbar-row>\r\n\r\n        <mat-toolbar-row *ngIf='isAdmin()'>\r\n          <a [routerLink]=\"['/visualizer/home/adminpanel']\">\r\n            <span>Panel de administración</span>\r\n            <span class=\"app-toolbar-filler\"></span>\r\n            <mat-icon class=\"example-icon\">settings</mat-icon>\r\n          </a>\r\n        </mat-toolbar-row>\r\n\r\n\r\n        <mat-toolbar-row>\r\n          <button mat-raised-button color=\"warn\" class=\"app-sidebar-button\" (click)=\"logout()\">\r\n            <mat-icon class=\"example-icon\">power_settings_new</mat-icon>\r\n            Salir\r\n          </button>\r\n        </mat-toolbar-row>\r\n\r\n\r\n      </mat-toolbar>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <router-outlet></router-outlet>\r\n    </mat-sidenav-content>\r\n\r\n  </mat-sidenav-container>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -744,7 +751,7 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.logout = function () {
         this._userService.logout();
-        this.router.navigate(['login']);
+        this.router.navigate(['/visualizer/login']);
     };
     HomeComponent.prototype.isAdmin = function () {
         return this._userService.isAdmin();
@@ -785,7 +792,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/imagegrid/imagegrid.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"loaded; else templateName\">\n\n  <h1 *ngIf=\"!vizs; else noViz\" class=' centerText '> No hay Visualizaciones</h1>\n\n  <ng-template #noViz>\n    <mat-grid-list cols=\"4\" rowHeight=\"250px\">\n      <mat-grid-tile *ngFor=\"let viz of vizs\">\n        <div class=\"container\">\n          <img src={{thumbnail(viz.img)}} class=\"image\" style=\"width:100%\">\n          <div class=\"middle\">\n            <button mat-raised-button (click)='ver(viz)' color=\"primary\">Ver</button>\n          </div>\n          <span class=' centerTitle '>{{viz.nombre}}</span>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </ng-template>\n\n  <button mat-fab class=\"app-fab\" [routerLink]=\"['/home/stepper']\">\n    <mat-icon>add</mat-icon>\n  </button>\n</div>\n\n<ng-template #templateName>\n  <mat-spinner style=\"margin: auto;\" mode=\"indeterminate\"></mat-spinner>\n</ng-template>\n"
+module.exports = "<div *ngIf=\"loaded; else templateName\">\n\n  <h1 *ngIf=\"!vizs; else noViz\" class=' centerText '> No hay Visualizaciones</h1>\n\n  <ng-template #noViz>\n    <mat-grid-list cols=\"4\" rowHeight=\"250px\">\n      <mat-grid-tile *ngFor=\"let viz of vizs\">\n        <div class=\"container\">\n          <img src={{thumbnail(viz.img)}} class=\"image\" style=\"width:100%\">\n          <div class=\"middle\">\n            <button mat-raised-button (click)='ver(viz)' color=\"primary\">Ver</button>\n          </div>\n          <span class=' centerTitle '>{{viz.nombre}}</span>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </ng-template>\n\n  <button mat-fab class=\"app-fab\" [routerLink]=\"['/visualizer/home/stepper']\">\n    <mat-icon>add</mat-icon>\n  </button>\n</div>\n\n<ng-template #templateName>\n  <mat-spinner style=\"margin: auto;\" mode=\"indeterminate\"></mat-spinner>\n</ng-template>\n"
 
 /***/ }),
 
@@ -826,7 +833,7 @@ var ImageGridComponent = (function () {
         return img;
     };
     ImageGridComponent.prototype.ver = function (viz) {
-        this.router.navigate(['home/vizView/' + viz._id]);
+        this.router.navigate(['visualizer/home/vizView/' + viz._id]);
     };
     ImageGridComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -864,7 +871,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\r\n  <span class=\"title\">Datavisualizer</span>\r\n</mat-toolbar>\r\n\r\n<mat-card>\r\n  <mat-card-content>\r\n\r\n    <form class=\"example-container\" #loginForm=\"ngForm\" (ngSubmit)=\"onSubmit(loginForm)\" accept-charset=\"UTF-8\" role=\"form\">\r\n      <h2 class=\"example-h2\">Login</h2>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"Nombre\" type=\"email\" name=\"email\" #email=\"ngModel\" [(ngModel)]=\"user.email\" email\r\n          required>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"Contraseña\" name=\"password\" type=\"password\" value=\"\" #password=\"ngModel\" [(ngModel)]=\"user.password\"\r\n          required>\r\n        <mat-icon matSuffix>visibility</mat-icon>\r\n      </mat-form-field>\r\n      <button type='submit' class=\"app-button\" mat-raised-button color=\"primary\" [disabled]=\"!loginForm.form.valid\">Login</button>\r\n    </form>\r\n\r\n  </mat-card-content>\r\n    <button class=\"app-button\" mat-raised-button color=\"primary\" [routerLink]=\"['/register']\">Registrate</button>\r\n</mat-card>\r\n"
+module.exports = "<mat-toolbar color=\"primary\">\r\n  <span class=\"title\">Datavisualizer</span>\r\n</mat-toolbar>\r\n\r\n<mat-card>\r\n  <mat-card-content>\r\n\r\n    <form class=\"example-container\" #loginForm=\"ngForm\" (ngSubmit)=\"onSubmit(loginForm)\" accept-charset=\"UTF-8\" role=\"form\">\r\n      <h2 class=\"example-h2\">Login</h2>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"Nombre\" type=\"email\" name=\"email\" #email=\"ngModel\" [(ngModel)]=\"user.email\" email\r\n          required>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"Contraseña\" name=\"password\" type=\"password\" value=\"\" #password=\"ngModel\" [(ngModel)]=\"user.password\"\r\n          required>\r\n        <mat-icon matSuffix>visibility</mat-icon>\r\n      </mat-form-field>\r\n      <button type='submit' class=\"app-button\" mat-raised-button color=\"primary\" [disabled]=\"!loginForm.form.valid\">Login</button>\r\n    </form>\r\n\r\n  </mat-card-content>\r\n<button class=\"app-button\" mat-raised-button color=\"primary\" [routerLink]=\"['/visualizer/register']\">Registrate</button>\r\n\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -912,7 +919,7 @@ var LoginComponent = (function () {
                 _this._userService.login(_this.user, 'true').subscribe(function (response) {
                     _this.token = response.token;
                     _this._userService.setToken(_this.token);
-                    _this.router.navigate(['home']);
+                    _this.router.navigate(['visualizer/home']);
                 }, function (error) {
                     console.log(error);
                 });
@@ -1309,7 +1316,7 @@ var QueuedbDetailComponent = (function () {
                                         resultDelete = _a.sent();
                                         resultDelete.subscribe(function (responseDelete) {
                                             _this.openDialog("Petición de base de datos añadida correctamente", "green", "done");
-                                            _this.router.navigate(['home/adminpanel/queuedblist']);
+                                            _this.router.navigate(['visualizer/home/adminpanel/queuedblist']);
                                         });
                                         return [2 /*return*/];
                                 }
@@ -1474,7 +1481,7 @@ var QueuedbListComponent = (function () {
         this.dataSource.filter = filterValue;
     };
     QueuedbListComponent.prototype.editar = function (queueDB) {
-        this.route.navigate(['home/adminpanel/queuedbdetail/' + queueDB._id]);
+        this.route.navigate(['visualizer/home/adminpanel/queuedbdetail/' + queueDB._id]);
     };
     QueuedbListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -1512,7 +1519,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\r\n  <span class=\"title\">Datavisualizer</span>\r\n</mat-toolbar>\r\n\r\n<mat-card>\r\n  <mat-card-content>\r\n\r\n    <form class=\"example-container\" #registerForm=\"ngForm\" (ngSubmit)=\"onSubmit(registerForm)\" accept-charset=\"UTF-8\" role=\"form\">\r\n      <h2 class=\"example-h2\">Registro de usuario</h2>\r\n      <mat-form-field>\r\n        <input matInput class=\"form-control\" name=\"name\" placeholder=\"Nombre\" type=\"text\" #name=\"ngModel\" [(ngModel)]=\"user.name\"\r\n          minlength=\"3\" required>\r\n        <mat-icon matSuffix>person</mat-icon>\r\n        <mat-hint align=\"end\">\r\n          {{user.name.length}} / min 3\r\n        </mat-hint>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"Email\" type=\"email\" name=\"email\" #email=\"ngModel\" [(ngModel)]=\"user.email\" email required asyncEmailValidator>\r\n        <mat-icon matSuffix>mail</mat-icon>\r\n        <mat-hint *ngIf=\"email.errors?.asyncInvalid\" align=\"end\">\r\n          <span style=\"color:red\"> El email ya esta registrado </span>\r\n        </mat-hint>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput type=\"password\" placeholder=\"Contraseña\" name=\"password\" #password=\"ngModel\" [(ngModel)]=\"user.password\"\r\n          required validateEqual=\"confirmPass\" reverse=\"true\">\r\n        <mat-icon matSuffix>visibility</mat-icon>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"Repita la contraseña\" name=\"confirmPass\" type=\"password\" #confirmPass=\"ngModel\" [(ngModel)]=\"confirmPassword\"\r\n          validateEqual=\"password\" reverse=\"false\" required>\r\n        <mat-icon matSuffix>visibility</mat-icon>\r\n      </mat-form-field>\r\n      <button type='submit' class=\"app-button\" mat-raised-button color=\"primary\" [disabled]=\"!registerForm.form.valid\">Registrarse</button>\r\n    </form>\r\n\r\n  </mat-card-content>\r\n  <button class=\"app-button\" mat-raised-button color=\"primary\" [routerLink]=\"['/login']\">Volver al login</button>\r\n</mat-card>\r\n"
+module.exports = "<mat-toolbar color=\"primary\">\r\n  <span class=\"title\">Datavisualizer</span>\r\n</mat-toolbar>\r\n\r\n<mat-card>\r\n  <mat-card-content>\r\n\r\n    <form class=\"example-container\" #registerForm=\"ngForm\" (ngSubmit)=\"onSubmit(registerForm)\" accept-charset=\"UTF-8\" role=\"form\">\r\n      <h2 class=\"example-h2\">Registro de usuario</h2>\r\n      <mat-form-field>\r\n        <input matInput class=\"form-control\" name=\"name\" placeholder=\"Nombre\" type=\"text\" #name=\"ngModel\" [(ngModel)]=\"user.name\"\r\n          minlength=\"3\" required>\r\n        <mat-icon matSuffix>person</mat-icon>\r\n        <mat-hint align=\"end\">\r\n          {{user.name.length}} / min 3\r\n        </mat-hint>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"Email\" type=\"email\" name=\"email\" #email=\"ngModel\" [(ngModel)]=\"user.email\" email required asyncEmailValidator>\r\n        <mat-icon matSuffix>mail</mat-icon>\r\n        <mat-hint *ngIf=\"email.errors?.asyncInvalid\" align=\"end\">\r\n          <span style=\"color:red\"> El email ya esta registrado </span>\r\n        </mat-hint>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput type=\"password\" placeholder=\"Contraseña\" name=\"password\" #password=\"ngModel\" [(ngModel)]=\"user.password\"\r\n          required validateEqual=\"confirmPass\" reverse=\"true\">\r\n        <mat-icon matSuffix>visibility</mat-icon>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput placeholder=\"Repita la contraseña\" name=\"confirmPass\" type=\"password\" #confirmPass=\"ngModel\" [(ngModel)]=\"confirmPassword\"\r\n          validateEqual=\"password\" reverse=\"false\" required>\r\n        <mat-icon matSuffix>visibility</mat-icon>\r\n      </mat-form-field>\r\n      <button type='submit' class=\"app-button\" mat-raised-button color=\"primary\" [disabled]=\"!registerForm.form.valid\">Registrarse</button>\r\n    </form>\r\n\r\n  </mat-card-content>\r\n<button class=\"app-button\" mat-raised-button color=\"primary\" [routerLink]=\"['/visualizer/login']\">Volver al login</button>\r\n\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -1868,7 +1875,7 @@ var StepperComponent = (function () {
                         viz.options.push(opcionTest);
                         var vizAdded = this.vizService.addViz(viz);
                         this.openDialog("Visualización añadida correctamente", "green", "done");
-                        this.router.navigate(['home/imagegrid']);
+                        this.router.navigate(['visualizer/home/imagegrid']);
                     }
                     else {
                         this.openDialog("Selecciona al menos un algoritmo con el que testear los clusters", "red", "error");
@@ -2213,7 +2220,7 @@ var VizqueueDetailComponent = (function () {
                 result.subscribe(function (response) { return __awaiter(_this, void 0, void 0, function () {
                     return __generator(this, function (_a) {
                         this.openDialog("Petición de base de datos añadida correctamente", "green", "done");
-                        this.router.navigate(['home/adminpanel/vizqueuelist']);
+                        this.router.navigate(['visualizer/home/adminpanel/vizqueuelist']);
                         return [2 /*return*/];
                     });
                 }); }, function (error) {
@@ -2400,7 +2407,7 @@ var VizqueueListComponent = (function () {
         });
     };
     VizqueueListComponent.prototype.editar = function (viz) {
-        this.route.navigate(['home/adminpanel/vizqueuedetail/' + viz._id]);
+        this.route.navigate(['visualizer/home/adminpanel/vizqueuedetail/' + viz._id]);
     };
     VizqueueListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -2996,7 +3003,7 @@ var LogginGuard = (function () {
             return true;
         }
         else {
-            this._router.navigate(['/login']);
+            this._router.navigate(['/visualizer/login']);
             return false;
         }
     };
@@ -3038,7 +3045,7 @@ var ProtectLogginGuard = (function () {
     }
     ProtectLogginGuard.prototype.canActivate = function () {
         if (this._userService.getIdentity() != null) {
-            this._router.navigate(['/home']);
+            this._router.navigate(['/visualizer/home']);
             return false;
         }
         else {
