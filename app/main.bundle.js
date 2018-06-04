@@ -1790,7 +1790,7 @@ var StepperComponent = (function () {
         return fields.filter(function (field) { return field.tipo === 'Clase'; });
     };
     StepperComponent.prototype.numberField = function (fields) {
-        return fields.filter(function (field) { return field.tipo === 'Númerico'; });
+        return fields.filter(function (field) { return field.tipo === 'Numérico'; });
     };
     StepperComponent.prototype.firstStepCheck = function (stepper) {
         if (this.selection.selected.length > 0) {
@@ -2595,29 +2595,7 @@ var DatabaseService = (function () {
         return localStorage.getItem('token');
     };
     DatabaseService.prototype.tiposCampos = function () {
-        return ['Númerico', 'Clase'];
-    };
-    DatabaseService.prototype.databaseMock = function () {
-        return [{
-                nombre: "ISOC",
-                descripcion: "Share of person tal Duis ipsum culpa cupidatat voluptate sunt exercitation est magna. Quis nostrud nisi laboris nostrud proident veniam magna consequat esse. Nulla sunt consequat minim incididunt. Minim laborum velit voluptate duis ea mollit adipisicing laboris eiusmod nisi ad consectetur ea officia. Incididunt nostrud cillum reprehenderit aliqua in ut occaecat fugiat magna tempor elit voluptate deserunt nisi. Cupidatat incididunt fugiat dolore nisi laboris ipsum amet. Lorem tempor nulla proident amet nisi fugiat quis proident magna reprehenderit id eiusmod est molli",
-                campos: [{ nombre: "unit", tipo: "Clase" }, { nombre: "Year", tipo: "Numerico" }],
-            },
-            {
-                nombre: "ISOC1",
-                descripcion: "Share of person tal Duis ipsum culpa cupidatat voluptate sunt exercitation est magna. Quis nostrud nisi laboris nostrud proident veniam magna consequat esse. Nulla sunt consequat minim incididunt. Minim laborum velit voluptate duis ea mollit adipisicing laboris eiusmod nisi ad consectetur ea officia. Incididunt nostrud cillum reprehenderit aliqua in ut occaecat fugiat magna tempor elit voluptate deserunt nisi. Cupidatat incididunt fugiat dolore nisi laboris ipsum amet. Lorem tempor nulla proident amet nisi fugiat quis proident magna reprehenderit id eiusmod est molli",
-                campos: [{ nombre: "unit", tipo: "Clase" }, { nombre: "Year", tipo: "Numerico" }],
-            },
-            {
-                nombre: "ISOC2",
-                descripcion: "Share of person tal Duis ipsum culpa cupidatat voluptate sunt exercitation est magna. Quis nostrud nisi laboris nostrud proident veniam magna consequat esse. Nulla sunt consequat minim incididunt. Minim laborum velit voluptate duis ea mollit adipisicing laboris eiusmod nisi ad consectetur ea officia. Incididunt nostrud cillum reprehenderit aliqua in ut occaecat fugiat magna tempor elit voluptate deserunt nisi. Cupidatat incididunt fugiat dolore nisi laboris ipsum amet. Lorem tempor nulla proident amet nisi fugiat quis proident magna reprehenderit id eiusmod est molli",
-                campos: [{ nombre: "unit", tipo: "Clase" }, { nombre: "Year", tipo: "Numerico" }],
-            },
-            {
-                nombre: "ISOC3",
-                descripcion: "Share of person tal Duis ipsum culpa cupidatat voluptate sunt exercitation est magna. Quis nostrud nisi laboris nostrud proident veniam magna consequat esse. Nulla sunt consequat minim incididunt. Minim laborum velit voluptate duis ea mollit adipisicing laboris eiusmod nisi ad consectetur ea officia. Incididunt nostrud cillum reprehenderit aliqua in ut occaecat fugiat magna tempor elit voluptate deserunt nisi. Cupidatat incididunt fugiat dolore nisi laboris ipsum amet. Lorem tempor nulla proident amet nisi fugiat quis proident magna reprehenderit id eiusmod est molli",
-                campos: [{ nombre: "unit", tipo: "Clase" }, { nombre: "Year", tipo: "Numerico" }],
-            }];
+        return ['Numérico', 'Clase'];
     };
     DatabaseService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
