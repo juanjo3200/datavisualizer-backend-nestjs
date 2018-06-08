@@ -779,7 +779,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".centerText {\r\n  color: lightgrey;\r\n  text-align: center;\r\n  margin-top: 10%;\r\n}\r\n\r\n.centerTitle {\r\n  margin-top: 10%;\r\n  margin-left: 5%;\r\n  text-align: center;\r\n}\r\n\r\n.container {\r\n  position: relative;\r\n  width: 75%;\r\n}\r\n\r\n.image {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  transition: .5s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\r\n  border: 1px solid #ddd;\r\n  border-radius: 4px;\r\n}\r\n\r\n.middle {\r\n  transition: .5s ease;\r\n  opacity: 0;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, -50%);\r\n          transform: translate(-50%, -50%);\r\n  -ms-transform: translate(-50%, -50%);\r\n  text-align: center;\r\n}\r\n\r\n.container:hover .image {\r\n  opacity: 0.3;\r\n}\r\n\r\n.container:hover .middle {\r\n  opacity: 1;\r\n}\r\n\r\n.text {\r\n  background-color: grey;\r\n  color: whitesmoke;\r\n  font-size: 16px;\r\n  padding: 16px 32px;\r\n}\r\n", ""]);
+exports.push([module.i, ".centerText {\r\n  color: lightgrey;\r\n  text-align: center;\r\n  margin-top: 10%;\r\n}\r\n\r\n.centerTitle {\r\n  margin-top: 10%;\r\n  margin-left: 5%;\r\n  text-align: center;\r\n}\r\n\r\n.container {\r\n  position: relative;\r\n  width: 75%;\r\n}\r\n\r\n.image {\r\n  opacity: 1;\r\n  display: block;\r\n  width: 100%;\r\n  height: auto;\r\n  transition: .5s ease;\r\n  -webkit-backface-visibility: hidden;\r\n          backface-visibility: hidden;\r\n  border: 1px solid #ddd;\r\n  border-radius: 4px;\r\n}\r\n\r\n.middle {\r\n  transition: .5s ease;\r\n  opacity: 0;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, -50%);\r\n          transform: translate(-50%, -50%);\r\n  -ms-transform: translate(-50%, -50%);\r\n  text-align: center;\r\n}\r\n\r\n.container:hover .image {\r\n  opacity: 0.3;\r\n}\r\n\r\n.container:hover .middle {\r\n  opacity: 1;\r\n}\r\n\r\n.text {\r\n  background-color: grey;\r\n  color: whitesmoke;\r\n  font-size: 16px;\r\n  padding: 16px 32px;\r\n}\r\n\r\n\r\n.example-card {\r\n  max-width: 400px;\r\n}\r\n\r\n.example-header-image {\r\n  background-size: cover;\r\n}\r\n", ""]);
 
 // exports
 
@@ -792,7 +792,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/imagegrid/imagegrid.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"loaded; else templateName\">\n\n  <h1 *ngIf=\"!vizs; else noViz\" class=' centerText '> No hay Visualizaciones</h1>\n\n  <ng-template #noViz>\n    <mat-grid-list cols=\"4\" rowHeight=\"250px\">\n      <mat-grid-tile *ngFor=\"let viz of vizs\">\n        <div class=\"container\">\n          <img src={{thumbnail(viz.img)}} class=\"image\" style=\"width:100%\">\n          <div class=\"middle\">\n            <button mat-raised-button (click)='ver(viz)' color=\"primary\">Ver</button>\n          </div>\n          <span class=' centerTitle '>{{viz.nombre}}</span>\n        </div>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </ng-template>\n\n  <button mat-fab class=\"app-fab\" [routerLink]=\"['/visualizer/home/stepper']\">\n    <mat-icon>add</mat-icon>\n  </button>\n</div>\n\n<ng-template #templateName>\n  <mat-spinner style=\"margin: auto;\" mode=\"indeterminate\"></mat-spinner>\n</ng-template>\n"
+module.exports = "<div *ngIf=\"loaded; else templateName\">\n\n  <h1 *ngIf=\"!vizs; else noViz\" class=' centerText '> No hay Visualizaciones</h1>\n\n\n\n  <ng-template #noViz>\n    <mat-grid-list cols=\"4\" rowHeight=\"500px\">\n      <mat-grid-tile *ngFor=\"let viz of vizs\">\n          <mat-card class=\"example-card\">\n            <img mat-card-image src={{thumbnail(viz.img)}} alt=\"VizThumbnail\">\n            <mat-card-content>\n              <p>\n                {{viz.nombre}}\n              </p>\n            </mat-card-content>\n            <mat-card-actions>\n              <button mat-raised-button (click)='ver(viz)' color=\"primary\">Ver</button>\n            </mat-card-actions>\n          </mat-card>\n      </mat-grid-tile>\n    </mat-grid-list>\n  </ng-template>\n\n  <button mat-fab class=\"app-fab\" [routerLink]=\"['/visualizer/home/stepper']\">\n    <mat-icon>add</mat-icon>\n  </button>\n</div>\n\n<ng-template #templateName>\n  <mat-spinner style=\"margin: auto;\" mode=\"indeterminate\"></mat-spinner>\n</ng-template>\n"
 
 /***/ }),
 
@@ -1047,7 +1047,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "  .mat-table {\r\n    overflow: auto;\r\n  }\r\n\r\n  mat-cell,\r\n  .mat-header-cell {\r\n    overflow: visible;\r\n  }\r\n\r\n", ""]);
 
 // exports
 
@@ -2034,7 +2034,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/viz-view/viz-view.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style='height: 100%, width: 100%;'id=\"tableauViz\"></div>\n"
+module.exports = "<div style='height: 100%, width: 100%;' id=\"tableauViz\">\n</div>\n<div *ngIf=\"vizReady; else templateName\">\n\n  <h3 class=\"example-h2\">Información de la Viz</h3>\n  <ul style=\"list-style-type:none\">\n    <li>Algoritmo: {{vizInfo.algoritmo}}</li>\n    <li>Bases de datos:\n      <ul>\n        <li *ngFor=\"let databases of viz.databases\">\n          {{databases.nombre}}\n        </li>\n      </ul>\n    </li>\n    <li> Campos Clustering\n      <ul>\n        <li *ngFor=\"let cluster of vizInfo.clusters\">\n          <pre>{{cluster.database}}: {{cluster.cluster}} </pre>\n        </li>\n      </ul>\n    </li>\n    <li>Algoritmos para testear los clusters:\n      <ul>\n        <li *ngFor=\"let test of vizInfo.algoritmosTest\">\n          {{test}}\n        </li>\n      </ul>\n    </li>\n    <li>Preprocesamiento:\n      <ul style=\"list-style-type:square\">\n        <li *ngFor=\"let preprocesamiento of vizInfo.preprocesamiento\">\n          <pre>{{preprocesamiento | json}}</pre>\n        </li>\n      </ul>\n    </li>\n  </ul>\n</div>\n\n<ng-template #templateName>\n  <mat-spinner></mat-spinner>\n</ng-template>\n"
 
 /***/ }),
 
@@ -2046,6 +2046,7 @@ module.exports = "<div style='height: 100%, width: 100%;'id=\"tableauViz\"></div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_api_viz_service__ = __webpack_require__("../../../../../src/app/services/api/viz.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_visualization_entity__ = __webpack_require__("../../../../../src/app/components/models/visualization.entity.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2058,16 +2059,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var VizViewComponent = (function () {
     function VizViewComponent(vizService, route) {
         this.vizService = vizService;
         this.route = route;
+        // now declare an instance var
+        this.vizReady = false;
     }
     VizViewComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.viz = new __WEBPACK_IMPORTED_MODULE_3__models_visualization_entity__["b" /* Visualization */]();
+        this.viz.nombre = '';
+        this.viz.url = '';
+        this.viz.img = '';
+        this.viz.databases = new Array();
+        this.viz.options = new Array();
+        this.vizInfo = new Object();
         var id = this.route.snapshot.paramMap.get('id');
         this.vizService.getVizById(id).subscribe(function (response) {
             _this.viz = response;
+            _this.viz.options.forEach(function (opcion) {
+                try {
+                    _this.vizInfo[opcion.nombre] = JSON.parse(opcion.valor);
+                }
+                catch (error) {
+                    _this.vizInfo[opcion.nombre] = opcion.valor;
+                }
+            });
             var placeholderDiv = document.getElementById('tableauViz');
             var url = _this.viz.url;
             var options = {
@@ -2078,6 +2097,7 @@ var VizViewComponent = (function () {
             };
             _this.tableauViz = new tableau.Viz(placeholderDiv, url, options);
             // Create a viz object and embed it in the container div.
+            _this.vizReady = true;
         });
     };
     VizViewComponent = __decorate([
@@ -2262,7 +2282,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "  .example-form-field {\r\n    width: 100%;\r\n  }\r\n\r\n  .mat-table {\r\n    overflow: auto;\r\n  }\r\n\r\n  mat-cell,\r\n  .mat-header-cell {\r\n    overflow: visible;\r\n  }\r\n\r\n  .centerText {\r\n    color: lightgrey;\r\n    text-align: center;\r\n    margin-top: 10%;\r\n  }\r\n\r\n", ""]);
+exports.push([module.i, "  .example-form-field {\r\n    width: 100%;\r\n  }\r\n\r\n  .mat-table {\r\n    overflow: auto;\r\n  }\r\n\r\n  mat-cell,\r\n  .mat-header-cell {\r\n    overflow: auto;\r\n  }\r\n\r\n  .centerText {\r\n    color: lightgrey;\r\n    text-align: center;\r\n    margin-top: 10%;\r\n  }\r\n\r\n", ""]);
 
 // exports
 
@@ -2275,7 +2295,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/vizqueue-list/vizqueue-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"dataSource; else templateName\">\n\n\n  <br>\n  <mat-form-field class=\"example-form-field\">\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filtro\">\n  </mat-form-field>\n\n  <mat-table #table [dataSource]=\"dataSource\">\n\n\n    <ng-container matColumnDef=\"nombre\">\n      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>\n      <mat-cell *matCellDef=\"let viz\"> {{viz.nombre}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"url\">\n      <mat-header-cell *matHeaderCellDef> Url </mat-header-cell>\n      <mat-cell *matCellDef=\"let viz\">\n        <span *ngIf=\"viz.url; else templateUrl\">\n          <mat-icon>done</mat-icon>\n        </span>\n        <ng-template #templateUrl>\n          <mat-icon>clear</mat-icon>\n        </ng-template>\n      </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"algoritmo\">\n      <mat-header-cell *matHeaderCellDef> Algoritmo de procesamiento </mat-header-cell>\n      <mat-cell *matCellDef=\"let viz\"> {{viz.algoritmo}} </mat-cell>\n    </ng-container>\n\n\n    <ng-container matColumnDef=\"cluster\">\n      <mat-header-cell *matHeaderCellDef> Campos clustering </mat-header-cell>\n\n      <mat-cell *matCellDef=\"let viz\">\n        <ul>\n          <li *ngFor=\"let cluster of viz.clusters\">\n            <pre>{{cluster.database}}: {{cluster.cluster}} </pre>\n          </li>\n        </ul>\n      </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"databases\">\n      <mat-header-cell *matHeaderCellDef> Bases de datos </mat-header-cell>\n      <mat-cell *matCellDef=\"let viz\">\n        <ul>\n          <li *ngFor=\"let databases of viz.databases\">\n            {{databases.nombre}}\n          </li>\n        </ul>\n      </mat-cell>\n    </ng-container>\n\n    <!-- Checkbox Column -->\n    <ng-container matColumnDef=\"editar\">\n      <mat-header-cell *matHeaderCellDef>\n        Añadir la base de datos\n      </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\">\n        <button (click)=\"editar(row)\" mat-button color=\"primary\">Editar</button>\n        <button mat-icon-button (click)='delete(row)'>\n          <mat-icon aria-label=\"Delete\">delete</mat-icon>\n        </button>\n      </mat-cell>\n    </ng-container>\n\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n\n  </mat-table>\n</div>\n\n<ng-template #templateName>\n  <mat-spinner></mat-spinner>\n</ng-template>\n"
+module.exports = "<div *ngIf=\"dataSource; else templateName\">\n\n\n  <br>\n  <mat-form-field class=\"example-form-field\">\n    <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filtro\">\n  </mat-form-field>\n\n  <mat-table #table [dataSource]=\"dataSource\">\n\n\n    <ng-container matColumnDef=\"nombre\">\n      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>\n      <mat-cell *matCellDef=\"let viz\"> {{viz.nombre}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"url\">\n      <mat-header-cell *matHeaderCellDef> Url </mat-header-cell>\n      <mat-cell *matCellDef=\"let viz\">\n        <span *ngIf=\"viz.url; else templateUrl\">\n          <mat-icon>done</mat-icon>\n        </span>\n        <ng-template #templateUrl>\n          <mat-icon>clear</mat-icon>\n        </ng-template>\n      </mat-cell>\n    </ng-container>\n\n\n    <ng-container matColumnDef=\"algoritmo\">\n      <mat-header-cell *matHeaderCellDef> Algoritmo de procesamiento </mat-header-cell>\n      <mat-cell *matCellDef=\"let viz\"> {{viz.algoritmo}} </mat-cell>\n    </ng-container>\n\n\n    <ng-container matColumnDef=\"cluster\">\n      <mat-header-cell *matHeaderCellDef> Campos clustering </mat-header-cell>\n\n      <mat-cell *matCellDef=\"let viz\">\n        <ul>\n          <li *ngFor=\"let cluster of viz.clusters\">\n            {{cluster.database}}: {{cluster.cluster}}\n          </li>\n        </ul>\n      </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"databases\">\n      <mat-header-cell *matHeaderCellDef> Bases de datos </mat-header-cell>\n      <mat-cell *matCellDef=\"let viz\">\n        <ul>\n          <li *ngFor=\"let databases of viz.databases\">\n            {{databases.nombre}}\n          </li>\n        </ul>\n      </mat-cell>\n    </ng-container>\n\n    <!-- Checkbox Column -->\n    <ng-container matColumnDef=\"editar\">\n      <mat-header-cell *matHeaderCellDef>\n        Añadir la base de datos\n      </mat-header-cell>\n      <mat-cell *matCellDef=\"let row\">\n        <button (click)=\"editar(row)\" mat-button color=\"primary\">Editar</button>\n        <button mat-icon-button (click)='delete(row)'>\n          <mat-icon aria-label=\"Delete\">delete</mat-icon>\n        </button>\n      </mat-cell>\n    </ng-container>\n\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n\n  </mat-table>\n</div>\n\n<ng-template #templateName>\n  <mat-spinner></mat-spinner>\n</ng-template>\n"
 
 /***/ }),
 
@@ -2342,7 +2362,7 @@ var VizqueueListComponent = (function () {
     function VizqueueListComponent(vizService, route) {
         this.vizService = vizService;
         this.route = route;
-        this.displayedColumns = ['nombre', 'url', 'algoritmo', 'cluster', 'databases', 'editar'];
+        this.displayedColumns = ['nombre', 'algoritmo', 'cluster', 'databases', 'url', 'editar'];
         this.selection = new __WEBPACK_IMPORTED_MODULE_2__angular_cdk_collections__["b" /* SelectionModel */](true, []);
     }
     VizqueueListComponent.prototype.ngOnInit = function () {
